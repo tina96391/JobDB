@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
   body {
       font: 400 15px Lato, Microsoft JhengHei;
@@ -31,10 +32,12 @@
       margin-bottom: 30px;
   }  
   .jumbotron {
-      background-color:#276893;
-      color: #fff;
-      padding: 80px 25px;
-      font-family: Montserrat, sans-serif;
+	  background-image:url( 'https://cdn.pixabay.com/photo/2017/11/16/10/32/team-2954004_960_720.jpg' );
+      background-size:100% 100%;
+	  background-repeat:no-repeat;
+	  color: #99BBFF;
+      padding: 200px 100px;
+      font-family:Microsoft JhengHei;
   }
   .container-fluid {
       padding: 60px 50px;
@@ -50,26 +53,7 @@
       color: #f4511e;
       font-size: 200px;
   }
-  .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
-  }
-  .thumbnail img {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 10px;
-  }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
+
   .item h4 {
       font-size: 19px;
       line-height: 1.375em;
@@ -188,6 +172,58 @@
         font-size: 150px;
     }
   }
+  
+  
+    #myModal{
+    margin-top: 2%;
+  }
+  .row{
+    padding:2%;
+  }
+  .modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+  
+  #login-dp{
+    min-width: 250px;
+    padding: 20px 20px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+	}
+#login-dp .help-block{
+    font-size:10px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+#footer{
+    background-color: #778899;
+    color: #fff !important;
+    display:block;
+  }
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -207,13 +243,46 @@
         
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#news">NEWS</a></li>
+		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+			<ul id="login-dp" class="dropdown-menu">
+				<li>
+					 <div class="row">
+							<div class="col-md-12">
+								
+								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+										</div>
+										<div class="form-group">
+											 <label class="sr-only" for="exampleInputPassword2">Password</label>
+											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+										</div>
+										<div class="form-group">
+											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+										</div>
+								 </form>
+							</div>
+							<div class="bottom text-center">
+								New here ? <a href="#"><b>Join Us</b></a>
+							</div>
+					 </div>
+				</li>
+			</ul>
+        </li>
+		
+		
+		
+		
+		
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="jumbotron text-center">
-  <img src="https://i.imgur.com/JQ7tH85.png" style="width:10%" >
   <h1>創業媒合平台</h1> 
   <p>We specialize in blablabla</p> 
 </div>
@@ -252,15 +321,25 @@
           <h1>News</h1>
         </div>
         <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <table class="table table-hover">
+			<thead>
+				<tr>
+				<th width="10%" class="text-center">No.</th>
+				<th width="60%" class="text-center">內容</th>
+				<th width="30%" class="text-center">時間</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-toggle="modal" data-target="#myModal">
+				<td>1</td>
+				<td >1. 課程助教設定步驟 TA setup procedure...</td>
+				<td>2017/11/11</td>
+				</tr>
+      
+			</tbody>
+		</table>
         </div>
         <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
           <button class="btn btn-lg">More...</button>
         </div>
       </div>      
@@ -271,15 +350,25 @@
           <h1>徵人啟事</h1>
         </div>
         <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <table class="table table-hover">
+			<thead>
+				<tr>
+				<th width="10%" class="text-center">No.</th>
+				<th width="60%" class="text-center">內容</th>
+				<th width="30%" class="text-center">時間</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>1</td>
+				<td>1. 課程助教設定步驟 TA setup procedure...</td>
+				<td>2017/11/11</td>
+				</tr>
+			</tbody>
+		  </table>
         </div>
         <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
+          
           <button class="btn btn-lg">More...</button>
         </div>
       </div>      
@@ -290,15 +379,26 @@
           <h1>演講公告</h1>
         </div>
         <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <table class="table table-hover">
+			<thead>
+				<tr>
+				<th width="10%" class="text-center">No.</th>
+				<th width="60%" class="text-center">內容</th>
+				<th width="30%" class="text-center">時間</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>1</td>
+				<td>1. 課程助教設定步驟 TA setup procedure...</td>
+				<td>2017/11/11</td>
+				</tr>
+      
+			</tbody>
+		  </table>
         </div>
         <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
+          
           <button class="btn btn-lg">More...</button>
         </div>
       </div>      
@@ -307,12 +407,109 @@
 </div>
 
 
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+ <footer id="footer" style="height:30%">
+  <div class="row">
+      <div class="col-md-4">
+        <h3>聯絡我們</h3>
+        <ul>
+          <li>
+            電話：03-4503456
+          </li>
+          <li>
+            信箱：fsgaerg@gmail.com
+          </li>
+          <li>
+            Fax：02-436457
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>追蹤我們</h3>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style="font-size:48px; color:white;"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa fa-instagram" style="font-size:48px;color:white"></i></a>
+        <a href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:48px;color:white"></i></a>
+      </div>
+      <div class="col-md-4">
+        <h3>其他資源</h3>
+        <a href="https://young.taiwanjobs.gov.tw/ejob/html/index.html" style="color:white;">青年圓夢網</a>
+      </div>
+    </div>
 </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" width="100%">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+    <div class="modal-content " >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">詳細資料</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel-group">
+          <div class="panel panel-info">
+            <div class="panel-heading">空間名稱</div>
+            <div class="panel-body">我好棒</div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">地址</div>
+            <div class="panel-body">綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋</div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="row" style="padding:0%">
+                <div class="col-md-4">
+                  大小
+                </div>
+                <div class="col-md-4">
+                  價錢
+                </div>
+                <div class="col-md-4">
+                  開放時間
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row" style="padding:0%">
+                <div class="col-md-4">
+                  10坪
+                </div>
+                <div class="col-md-4">
+                  200/hr
+                </div>
+                <div class="col-md-4">
+                  8:00 ~ 20:00
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">空間描述</div>
+            <div class="panel-body">
+              <p>
+              傳告報眾一朋驚定回中輪數朋更開灣都這續立；別的分院後似世新，大去非內目位前們到分演子重知處業太用，水的體預連先現大家麼：可訴臺動問頭以況應自平感草大一去到臉候；傷參亞回能方一麼量不比？良岸能？以和器了問府較電益……來象座里相少流又立神動！
+              </p>
+            </div>
+          </div>
+          <div class="panel panel-info">
+            <div class="panel-heading">聯絡資訊</div>
+            <div class="panel-body">
+              <ul>
+                <li>
+                  手機：0983768725
+                </li>
+                <li>
+                  信箱：lifehefw@gmail.com
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+    </div>
+  </div>
+
 
 <script>
 $(document).ready(function(){
@@ -349,6 +546,12 @@ $(document).ready(function(){
     });
   });
 })
+
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
 </script>
 
 </body>
