@@ -104,7 +104,7 @@
   }
   .navbar {
       margin-bottom: 0;
-      background-color: #778899;
+      background-color:  #FEFCAD;
       z-index: 9999;
       border: 0;
       font-size: 12px !important;
@@ -114,7 +114,7 @@
       font-family: Montserrat, sans-serif;
   }
   .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
+      color: #92977E !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #276893 !important;
@@ -174,16 +174,7 @@
   }
   
   
-    #myModal{
-    margin-top: 2%;
-  }
-  .row{
-    padding:2%;
-  }
-  .modal-body {
-    max-height: calc(100vh - 210px);
-    overflow-y: auto;
-}
+
   
   #login-dp{
     min-width: 250px;
@@ -265,8 +256,8 @@
 										</div>
 								 </form>
 							</div>
-							<div class="bottom text-center">
-								New here ? <a href="#"><b>Join Us</b></a>
+							<div class="bottom text-center" >
+								New here ? <a href="#"><b style="color:#000000">Join Us</b></a>
 							</div>
 					 </div>
 				</li>
@@ -330,7 +321,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-toggle="modal" data-target="#myModal">
+				<tr>
 				<td>1</td>
 				<td >1. 課程助教設定步驟 TA setup procedure...</td>
 				<td>2017/11/11</td>
@@ -409,9 +400,9 @@
 
  <footer id="footer" style="height:30%">
   <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 " >
         <h3>聯絡我們</h3>
-        <ul>
+        <ul class="text-left">
           <li>
             電話：03-4503456
           </li>
@@ -437,79 +428,7 @@
 </footer>
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" width="100%">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-    <div class="modal-content " >
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">詳細資料</h4>
-      </div>
-      <div class="modal-body">
-        <div class="panel-group">
-          <div class="panel panel-info">
-            <div class="panel-heading">空間名稱</div>
-            <div class="panel-body">我好棒</div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">地址</div>
-            <div class="panel-body">綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋綠蓋</div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <div class="row" style="padding:0%">
-                <div class="col-md-4">
-                  大小
-                </div>
-                <div class="col-md-4">
-                  價錢
-                </div>
-                <div class="col-md-4">
-                  開放時間
-                </div>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div class="row" style="padding:0%">
-                <div class="col-md-4">
-                  10坪
-                </div>
-                <div class="col-md-4">
-                  200/hr
-                </div>
-                <div class="col-md-4">
-                  8:00 ~ 20:00
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">空間描述</div>
-            <div class="panel-body">
-              <p>
-              傳告報眾一朋驚定回中輪數朋更開灣都這續立；別的分院後似世新，大去非內目位前們到分演子重知處業太用，水的體預連先現大家麼：可訴臺動問頭以況應自平感草大一去到臉候；傷參亞回能方一麼量不比？良岸能？以和器了問府較電益……來象座里相少流又立神動！
-              </p>
-            </div>
-          </div>
-          <div class="panel panel-info">
-            <div class="panel-heading">聯絡資訊</div>
-            <div class="panel-body">
-              <ul>
-                <li>
-                  手機：0983768725
-                </li>
-                <li>
-                  信箱：lifehefw@gmail.com
-                </li>
-              </ul>
-            </div>
-          </div>
-      
-    </div>
-  </div>
-
+  
 
 <script>
 $(document).ready(function(){
@@ -547,11 +466,6 @@ $(document).ready(function(){
   });
 })
 
-$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-    });
-});
 </script>
 
 </body>
