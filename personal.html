@@ -32,6 +32,7 @@
       font-weight: 400;
       margin-bottom: 30px;
   }
+
   .navbar {
       margin-bottom: 0;
       background-color: #FEFCAD;
@@ -68,26 +69,6 @@
   .row{
     padding:2%;
   }
-  @keyframes slide {
-    0% {
-      opacity: 0;
-      transform: translateY(70%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0%);
-    }
-  }
-  @-webkit-keyframes slide {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(70%);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0%);
-    }
-  }
   @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
@@ -96,11 +77,6 @@
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .logo {
-        font-size: 150px;
     }
   }
   </style>
@@ -129,28 +105,66 @@
 
 <!-- Container (Services Section) -->
 <div class="container" style="padding-left:0%;padding-right:0%; height:70%">
-
   <div  class="container" style="min-height:50%; padding-top:5%;">
-    <h2>政府政策</h2>
-    <table id="findspace" class="table table-hover ">
-      <tr>
-        <th class="col-md-1">編號</th>
-        <th class="col-md-3">名稱</th>
-        <th class="col-md-2.5">單位名稱</th>
-        <th class="col-md-1.5">網站連結</th>
-        <th class="col-md-1.5">時間</th>
-        <th class="col-md-2.5">備註</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td style="vertical-align:middle;">1</td>
-        <td style="vertical-align:middle;">桃園市青年創業貸款創業輔導課程費用補貼計畫</td>
-        <td style="vertical-align:middle;">桃園市政府青年事務局</td>
-        <td style="vertical-align:middle;"><a href="http://youth.tycg.gov.tw/index.jsp">點我</a></td>
-        <td style="vertical-align:middle;">2017/12/16</td>
-        <td style="vertical-align:middle;">申請截至12月底</td>
-      </tr>
-    </table>
+    <div class="row">
+      <div class="col-md-4" style="padding-right:3%">
+        <span class="img">
+          <img class="img-circle" src="pics_1.jpg" alt="Cinque Terre" width="200" height="200">
+        </span>
+        <ul class="abstract"  style="list-style-type:none;padding:3% 0% ;width:200px" align="center">
+         <li class="ab-item" >
+           <a class="ab-link " href="#aboutme">About</a>
+         </li>
+         <li class="ab-item">
+           <a class="ab-link" href="#skill">專長</a>
+         </li>
+         <li class="ab-item">
+           <a class="ab-link" href="#myteam">我的團隊</a>
+         </li>
+         <li class="ab-item">
+           <a class="ab-link" href="#jointeam">參加的團隊</a>
+         </li>
+         <li class="ab-item">
+           <a class="ab-link" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+         </li>
+       </ul>
+      </div>
+      <div class="col-md-8">
+        <section class="resume-section" id="aboutme">
+          <h3>王曉明</h3>
+          <li>
+            性別：男
+          </li>
+          <li>
+            電話：0987654321
+          </li>
+          <li>
+            信箱：lidsgrt@gmail.com
+          </li>
+        </section>
+        <section class="resume-section" id="skill">
+          <h3>專長</h3>
+          <li>
+            藝術學類、音樂、舞蹈
+          </li>
+          <li>
+            工學類、景觀設計
+          </li>
+        </section>
+        <section class="resume-section" id="myteam">
+          <h3>我的團隊</h3>
+          <li>
+            JOBDB 專案
+          </li>
+        </section>
+        <section class="resume-section" id="jointeam">
+          <h3>參加過的團隊</h3>
+          <li>
+            JOBDB 專案
+          </li>
+        </section>
+      </div>
+    </div>
   </div>
   <div class="container" style="padding-bottom:2%;">
     <ul class="pager" id="page">
@@ -187,5 +201,6 @@
       </div>
     </div>
   </footer>
+
 </body>
 </html>
