@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="function.js"></script>
   <style>
   body {
       font: 400 15px Lato, Microsoft JhengHei;
@@ -142,12 +141,11 @@
 
 <!-- Container (Services Section) -->
 <div class="container" style="padding-left:0%;padding-right:0%; height:70%">
-
   <div  class="container" style="min-height:50%; padding-top:5%;">
     <h3 align="center">修改履歷</h3>
     <div class="well well-lg">
       <form action="" method="post" name="formAdd" id="formAdd">
-        <div class="form-group">
+        <div class="form-group" >
           <label for="name">姓名：</label><br>
           <input class="form-control" type="text" name="name">
           <br>
@@ -177,15 +175,14 @@
           <br>
           <label for="text_content">自介：</label>
     			<textarea class="form-control" cols="45"rows="10" name="textbar" id="text_content" >輸入你想要寫的內容...</textarea>
-    			<input name="action" type="hidden" value="add"><br />
-
-    			<button type="submit" class="btn btn-warning next">下一步</button>
+    			<br />
     		</div>
-    	</form>
-      <form>
-        <label id="sk" for="skill">專長：</label><br />
-        <input class="form-control" type="hidden" name="skill" id="skill">
-        <button type="submit;" class="btn btn-warning" id="submit" style="visibility:hidden">確認</button>
+        <button type="button" class="btn btn-warning" onclick="e();">下一步</button>
+    	</form><br />
+      <form id="tag">
+        <label for="skill">專長：</label><br />
+        <input class="form-control" type="text" name="skill" id="skill"><br />
+        <button type="submit;" class="btn btn-warning" id="submit">確認</button>
       </form>
     </div>
   </div>
@@ -225,13 +222,13 @@
     </div>
   </footer>
 <script>
-$(document).ready(function () {
-  $(".next").click(function (e) {
-      $("#skill input").prop('type','text'); //顯示tag input
-      $("#submit ").attr('style','visibility:visible'); //顯示tag button
-    });
+window.onload=function(){
+  $("#tag").hide();
 }
+function e(){
+  $("#tag").show();
 
+}
 </script>
 </body>
 </html>
