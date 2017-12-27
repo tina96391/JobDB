@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
@@ -436,6 +436,25 @@ span.round-tab:hover {
         left: 35%;
     }
 }
+
+
+
+div.input-group-option:last-child span.input-group-addon-remove{
+    display: none;
+}
+
+div.input-group-option:last-child input.form-control{
+    border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+div.input-group-option span.input-group-addon-remove{
+	cursor: pointer;
+}
+
+div.input-group-option{
+    margin-bottom: 3px;
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -500,7 +519,7 @@ span.round-tab:hover {
                 <ul class="nav nav-tabs" role="tablist">
 
                     <li role="presentation" class="active">
-                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1" id="Step_1">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-play"></i>
                             </span>
@@ -508,14 +527,14 @@ span.round-tab:hover {
                     </li>
 
                     <li role="presentation" class="disabled">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2" id="Step_2">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-pencil"></i>
                             </span>
                         </a>
                     </li>
                     <li role="presentation" class="disabled">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3" id="Step_3">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-list"></i>
                             </span>
@@ -547,7 +566,7 @@ span.round-tab:hover {
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="step2">
-                        <h3>Step 2  請輸入您組建團隊的城市、人數</h3>
+                        <h3>Step 2  請輸入您組建團隊的城市、目前人數</h3>
                         <div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-move"> </span></span>
 							
@@ -557,7 +576,7 @@ span.round-tab:hover {
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-user"> </span></span>
 							
-							<input  class="form-control" id="number_of_crew" placeholder="輸入團隊人數" name="number_of_crew" style="width:40%">
+							<input  class="form-control" id="number_of_crew" placeholder="輸入團隊目前人數" name="number_of_crew" style="width:40%">
 						</div>
 						
                         <ul class="list-inline pull-right">
@@ -576,17 +595,34 @@ span.round-tab:hover {
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full  tag_show">Save and continue</button></li>
                         </ul>
                     </div>
                     <div class="tab-pane" role="tabpanel" id="complete">
                         <h3>Complete</h3>
-                        <p>組建團隊完成！</p>
+                        <p>組建團隊完成！新增一些tags吧</p>
                     </div>
+					
                     <div class="clearfix"></div>
                 </div>
             </form>
+			
+			<form id="tags">
+			<div class="form-group form-group-options col-xs-11 col-sm-8 col-md-4">
+						<div class="input-group input-group-option col-xs-12">
+							<input name="option[]" class="form-control" type="hidden">
+							<span class="input-group-addon input-group-addon-remove">
+							<span class="glyphicon glyphicon-remove"></span>
+							</span>
+						</div>
+						</div>
+						
+						<ul class="list-inline pull-right">
+                            <li><button style="visibility:hidden;" id="tags_but" type="button" class="btn btn-primary btn-info-full">完成</button></li>
+                        </ul>
+			</form>
         </div>
+		
     </section>
    </div>
 </div>
@@ -660,8 +696,6 @@ $(document).ready(function(){
 })
 
 
-
-
 $(document).ready(function () {
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
@@ -689,6 +723,21 @@ $(document).ready(function () {
         prevTab($active);
 
     });
+	
+	$(".tag_show").click(function (e) {
+		var $active = $('.wizard .nav-tabs li.active');
+        $active.next().removeClass('disabled');
+        nextTab($active);
+		
+		//取消Step連結
+		$("#Step_1").attr('href','#'); 
+		$("#Step_2").attr('href','#'); 
+		$("#Step_3").attr('href','#'); 
+		
+        $("#tags input").attr('type','text'); //顯示tag input
+		$("#tags_but ").attr('style','visibility:visible'); //顯示tag button
+    });
+	
 });
 
 function nextTab(elem) {
@@ -701,6 +750,30 @@ function prevTab(elem) {
 $(function () {
                 $('#datetimepicker1').datetimepicker();
             });
+			
+			
+			
+/* 
+    Text fields 
+*/
+$(function(){
+    
+	$(document).on('focus', 'div.form-group-options div.input-group-option:last-child input', function(){
+        
+		var sInputGroupHtml = $(this).parent().html();
+		var sInputGroupClasses = $(this).parent().attr('class');
+		$(this).parent().parent().append('<div class="'+sInputGroupClasses+'">'+sInputGroupHtml+'</div>');
+        
+	});
+	
+	$(document).on('click', 'div.form-group-options .input-group-addon-remove', function(){
+        
+		$(this).parent().remove();
+        
+	});
+    
+});
+
 </script>
 
 </body>
