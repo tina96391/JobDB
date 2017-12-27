@@ -175,11 +175,13 @@
           <br>
           <label for="text_content">自介：</label>
     			<textarea class="form-control" cols="45"rows="10" name="textbar" id="text_content" >輸入你想要寫的內容...</textarea>
-    			<br />
+          <br />
+          <button type="button" class="btn btn-warning" onclick="f();">下一步</button>
+          <!--function f 觸發隱藏 button-->
+          <button type="submit" id="hiddenBtn" style="visibility:hidden;"></button>
     		</div>
-        <button type="button" class="btn btn-warning" onclick="e();">下一步</button>
     	</form><br />
-      <form id="tag">
+      <form id="tag" action="personal.html" method="post">
         <label for="skill">專長：</label><br />
         <input class="form-control" type="text" name="skill" id="skill"><br />
         <button type="submit;" class="btn btn-warning" id="submit">確認</button>
@@ -225,9 +227,9 @@
 window.onload=function(){
   $("#tag").hide();
 }
-function e(){
+function f(){
+  $('#hinddenBtn').trigger("click");//觸發隱藏 button
   $("#tag").show();
-
 }
 </script>
 </body>
