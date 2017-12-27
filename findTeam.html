@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>創業媒合平台</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="function.js"></script>
+  <style>
+  body {
+      font: 400 15px Lato, Microsoft JhengHei;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }
+  .img-tab{
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #FEFCAD;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #92977E !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #276893 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  html {
+    height:100%;
+  }
+  body {
+   overflow-x: hidden;
+ }
+  #footer{
+    background-color: #778899;
+    color: #fff !important;
+    display:block;
+  }
+  .row{
+    padding:2%;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="HomePage.html">JobDB</a>
+      </div>
+      <form class="navbar-form navbar-left" action="#">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <button type="submit" class="btn btn-default"><label class="glyphicon glyphicon-search"></label></button>
+        </div>
+      </form>
+      <div class="navbar-form navbar-right">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">管理會員
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="personal.html">個人資訊</a></li>
+            <li><a href="#">我的收藏</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Container (Services Section) -->
+<div class="container" style="padding-left:0%;padding-right:0%; height:70%">
+
+  <div  class="container" style="min-height:50%; padding-top:5%;">
+    <h2>找團隊</h2>
+    <table id="findspace" class="table table-hover ">
+      <tr>
+        <th class="col-md-2">編號</th>
+        <th class="col-md-3">名稱</th>
+        <th class="col-md-3">地點</th>
+        <th class="col-md-3">人數</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td style="vertical-align:middle;">1</td>
+        <td style="vertical-align:middle;">我好棒專案團隊</td>
+        <td style="vertical-align:middle;">中壢</td>
+        <td style="vertical-align:middle;">1人</td>
+        <td style="vertical-align:middle;"><a href="spacedata.html" class="btn btn-info" role="button">檢視</a></td>
+      </tr>
+    </table>
+  </div>
+  <div class="container" style="padding-bottom:2%;">
+    <ul class="pager" id="page">
+      <li class="active"><a href="#">1</a></li>
+    </ul>
+  </div>
+</div>
+  <!-- footer (Pricing Section) -->
+  <footer id="footer" style="height:30%">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>聯絡我們</h3>
+        <ul>
+          <li>
+            電話：03-4503456
+          </li>
+          <li>
+            信箱：fsgaerg@gmail.com
+          </li>
+          <li>
+            Fax：02-436457
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>追蹤我們</h3>
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" style="font-size:48px; color:white;"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa fa-instagram" style="font-size:48px;color:white"></i></a>
+        <a href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:48px;color:white"></i></a>
+      </div>
+      <div class="col-md-4">
+        <h3>其他資源</h3>
+        <a href="https://young.taiwanjobs.gov.tw/ejob/html/index.html" style="color:white;">青年圓夢網</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
