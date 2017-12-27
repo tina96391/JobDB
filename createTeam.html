@@ -595,32 +595,14 @@ div.input-group-option{
                         <ul class="list-inline pull-right">
                             <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                             <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                            <li><button type="button" class="btn btn-primary btn-info-full  tag_show">Save and continue</button></li>
+                            <li><button type="button" class="btn btn-primary btn-info-full" onclick="location.href='addTags.html';">Save and continue</button></li>
                         </ul>
-                    </div>
-                    <div class="tab-pane" role="tabpanel" id="complete">
-                        <h3>Complete</h3>
-                        <p>組建團隊完成！新增一些tags吧</p>
                     </div>
 					
                     <div class="clearfix"></div>
                 </div>
             </form>
 			
-			<form id="tags">
-			<div class="form-group form-group-options col-xs-11 col-sm-8 col-md-4">
-						<div class="input-group input-group-option col-xs-12">
-							<input name="option[]" class="form-control" type="hidden">
-							<span class="input-group-addon input-group-addon-remove">
-							<span class="glyphicon glyphicon-remove"></span>
-							</span>
-						</div>
-						</div>
-						
-						<ul class="list-inline pull-right">
-                            <li><button style="visibility:hidden;" id="tags_but" type="button" class="btn btn-primary btn-info-full">完成</button></li>
-                        </ul>
-			</form>
         </div>
 		
     </section>
@@ -724,7 +706,7 @@ $(document).ready(function () {
 
     });
 	
-	$(".tag_show").click(function (e) {
+	/*$(".tag_show").click(function (e) {
 		var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
@@ -736,7 +718,7 @@ $(document).ready(function () {
 		
         $("#tags input").attr('type','text'); //顯示tag input
 		$("#tags_but ").attr('style','visibility:visible'); //顯示tag button
-    });
+    });*/
 	
 });
 
@@ -753,26 +735,7 @@ $(function () {
 			
 			
 			
-/* 
-    Text fields 
-*/
-$(function(){
-    
-	$(document).on('focus', 'div.form-group-options div.input-group-option:last-child input', function(){
-        
-		var sInputGroupHtml = $(this).parent().html();
-		var sInputGroupClasses = $(this).parent().attr('class');
-		$(this).parent().parent().append('<div class="'+sInputGroupClasses+'">'+sInputGroupHtml+'</div>');
-        
-	});
-	
-	$(document).on('click', 'div.form-group-options .input-group-addon-remove', function(){
-        
-		$(this).parent().remove();
-        
-	});
-    
-});
+
 
 </script>
 
